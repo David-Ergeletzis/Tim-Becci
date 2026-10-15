@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tim &amp; Becci · 08.05.2027</title>
+<meta name="description" content="Anmeldung zur Hochzeit von Tim und Becci">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f3ec;
+    --card: #fffdf9;
+    --ink: #2e2a25;
+    --muted: #7a7166;
+    --line: #e4dccf;
+    --accent: #8a9a7b;
+    --accent-ink: #5d6b51;
+    --error: #a14b3c;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 620px; margin: 0 auto; padding: 56px 20px 80px; }
+
+  header { text-align: center; margin-bottom: 40px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400; font-size: clamp(52px, 13vw, 84px);
+    line-height: 1; margin: 0;
+  }
+  h1 .amp { font-style: italic; color: var(--accent); padding: 0 .08em; }
+  .date {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px; margin: 18px 0 0; letter-spacing: .06em;
+  }
+  .place { color: var(--muted); margin: 4px 0 0; }
+  .divider { width: 48px; height: 1px; background: var(--accent); margin: 28px auto 0; border: 0; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 32px 28px;
+    box-shadow: 0 1px 2px rgba(46,42,37,.04), 0 12px 32px -18px rgba(46,42,37,.18);
+  }
+  h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500; font-size: 30px; margin: 0 0 4px; text-align: center;
+  }
+  .intro { text-align: center; color: var(--muted); margin: 0 0 28px; }
+
+  .field { margin-bottom: 22px; }
+  label, legend { display: block; font-weight: 500; font-size: 14px; margin-bottom: 8px; }
+  .opt { color: var(--muted); font-weight: 400; }
+  input[type=text], textarea {
+    width: 100%; font: inherit; color: inherit;
+    background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; transition: border-color .15s, box-shadow .15s;
+  }
+  textarea { min-height: 84px; resize: vertical; }
+  input[type=text]:focus, textarea:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(138,154,123,.2);
+  }
+  fieldset { border: 0; padding: 0; margin: 0 0 22px; }
+
+  .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+  .choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .choice span {
+    display: block; text-align: center; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 10px; background: #fff;
+    padding: 11px 10px; font-size: 15px; transition: all .15s;
+  }
+  .choice span:hover { border-color: var(--accent); }
+  .choice input:checked + span {
+    background: var(--accent); border-color: var(--accent); color: #fff;
+  }
+  .choice input:focus-visible + span { box-shadow: 0 0 0 3px rgba(138,154,123,.35); }
+
+  .group {
+    border-left: 2px solid var(--line); padding-left: 18px; margin: 4px 0 22px;
+  }
+  [hidden] { display: none !important; }
+  .hp { position: absolute; left: -9999px; }
+
+  button {
+    width: 100%; font: inherit; font-weight: 600; letter-spacing: .02em;
+    background: var(--ink); color: var(--bg); border: 0; border-radius: 10px;
+    padding: 14px; cursor: pointer; transition: opacity .15s;
+  }
+  button:hover { opacity: .88; }
+  button:disabled { opacity: .5; cursor: wait; }
+  .error { color: var(--error); font-size: 14px; margin: 12px 0 0; text-align: center; }
+
+  .thanks { text-align: center; padding: 12px 0; }
+  .thanks .heart { font-size: 34px; color: var(--accent); line-height: 1; }
+  .thanks p { color: var(--muted); }
+
+  footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 28px; }
+
+  @media (max-width: 480px) {
+    main { padding-top: 40px; }
+    .card { padding: 26px 18px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Wir heiraten</p>
+    <h1>Tim <span class="amp">&amp;</span> Becci</h1>
+    <p class="date">08 · 05 · 2027</p>
+    <!-- Ort eintragen oder Zeile löschen -->
+    <p class="place">ORT EINTRAGEN</p>
+    <hr class="divider">
+  </header>
+
+  <section class="card">
+    <div id="formWrap">
+      <h2>Seid ihr dabei?</h2>
+      <p class="intro" id="deadlineText">Bitte gebt uns kurz Bescheid.</p>
+
+      <form id="rsvp" novalidate>
+        <div class="field">
+          <label for="name">Dein Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <fieldset>
+          <legend>Kommst du?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="zusage" value="Ja" required><span>Ja, gerne!</span></label>
+            <label class="choice"><input type="radio" name="zusage" value="Nein"><span>Leider nicht</span></label>
+          </div>
+        </fieldset>
+
+        <div id="yesBlock" hidden>
+          <fieldset>
+            <legend>Dein Essen</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="essen" value="Mit Fleisch"><span>Mit Fleisch</span></label>
+              <label class="choice"><input type="radio" name="essen" value="Vegetarisch"><span>Vegetarisch</span></label>
+              <label class="choice"><input type="radio" name="essen" value="Vegan"><span>Vegan</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Bringst du jemanden mit?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="begleitung" value="Ja"><span>Ja, +1</span></label>
+              <label class="choice"><input type="radio" name="begleitung" value="Nein" checked><span>Nein</span></label>
+            </div>
+          </fieldset>
+
+          <div class="group" id="plusBlock" hidden>
+            <div class="field">
+              <label for="begleitungName">Name der Begleitung</label>
+              <input type="text" id="begleitungName" name="begleitungName">
+            </div>
+            <fieldset style="margin-bottom:4px">
+              <legend>Essen der Begleitung</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="begleitungEssen" value="Mit Fleisch"><span>Mit Fleisch</span></label>
+                <label class="choice"><input type="radio" name="begleitungEssen" value="Vegetarisch"><span>Vegetarisch</span></label>
+                <label class="choice"><input type="radio" name="begleitungEssen" value="Vegan"><span>Vegan</span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <label for="allergien">Allergien / Unverträglichkeiten <span class="opt">(optional)</span></label>
+            <input type="text" id="allergien" name="allergien" placeholder="z. B. Nüsse, Laktose">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="nachricht">Nachricht an das Brautpaar <span class="opt">(optional)</span></label>
+          <textarea id="nachricht" name="nachricht"></textarea>
+        </div>
+
+        <!-- Spam-Schutz: für Menschen unsichtbar -->
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button type="submit" id="submitBtn">Absenden</button>
+        <p class="error" id="error" role="alert" hidden></p>
+      </form>
+    </div>
+
+    <div class="thanks" id="thanks" hidden>
+      <div class="heart">♡</div>
+      <h2 id="thanksTitle">Danke!</h2>
+      <p id="thanksText">Deine Antwort ist angekommen.</p>
+    </div>
+  </section>
+
+  <footer>Fragen? Meldet euch einfach direkt bei Tim oder Becci.</footer>
+</main>
+
+<script>
+  // ===== Konfiguration =====
+  // URL der Apps-Script-Web-App (endet auf /exec), siehe README
+  const SCRIPT_URL = "HIER_APPS_SCRIPT_URL_EINFUEGEN";
+  // Rückmeldefrist, z. B. "15.03.2027" – leer lassen, um sie nicht anzuzeigen
+  const FRIST = "";
+  // ==========================
+
+  const form = document.getElementById("rsvp");
+  const yesBlock = document.getElementById("yesBlock");
+  const plusBlock = document.getElementById("plusBlock");
+  const errorEl = document.getElementById("error");
+  const btn = document.getElementById("submitBtn");
+
+  if (FRIST) {
+    document.getElementById("deadlineText").textContent =
+      "Bitte gebt uns bis zum " + FRIST + " Bescheid.";
+  }
+
+  const val = (n) => (form.elements[n] && form.elements[n].value || "").trim();
+  const checked = (n) => {
+    const el = form.querySelector('input[name="' + n + '"]:checked');
+    return el ? el.value : "";
+  };
+
+  form.addEventListener("change", () => {
+    yesBlock.hidden = checked("zusage") !== "Ja";
+    plusBlock.hidden = checked("begleitung") !== "Ja";
+  });
+
+  function fail(msg) {
+    errorEl.textContent = msg;
+    errorEl.hidden = false;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorEl.hidden = true;
+
+    const zusage = checked("zusage");
+    const kommt = zusage === "Ja";
+    const plus = kommt && checked("begleitung") === "Ja";
+
+    if (!val("name")) return fail("Bitte trag deinen Namen ein.");
+    if (!zusage) return fail("Bitte sag uns, ob du kommst.");
+    if (kommt && !checked("essen")) return fail("Bitte wähl dein Essen aus.");
+    if (plus && !val("begleitungName")) return fail("Bitte trag den Namen deiner Begleitung ein.");
+    if (plus && !checked("begleitungEssen")) return fail("Bitte wähl das Essen deiner Begleitung aus.");
+
+    const data = new URLSearchParams({
+      name: val("name"),
+      zusage,
+      essen: kommt ? checked("essen") : "",
+      begleitung: plus ? "Ja" : "Nein",
+      begleitungName: plus ? val("begleitungName") : "",
+      begleitungEssen: plus ? checked("begleitungEssen") : "",
+      allergien: kommt ? val("allergien") : "",
+      nachricht: val("nachricht"),
+      website: val("website")
+    });
+
+    btn.disabled = true;
+    btn.textContent = "Wird gesendet …";
+    try {
+      // no-cors: Apps Script erlaubt keine CORS-Antwort lesbar,
+      // die Daten kommen trotzdem an.
+      await fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: data });
+      document.getElementById("formWrap").hidden = true;
+      document.getElementById("thanks").hidden = false;
+      if (kommt) {
+        document.getElementById("thanksTitle").textContent = "Wie schön!";
+        document.getElementById("thanksText").textContent =
+          "Wir freuen uns riesig auf " + (plus ? "euch" : "dich") + ".";
+      } else {
+        document.getElementById("thanksTitle").textContent = "Schade!";
+        document.getElementById("thanksText").textContent =
+          "Danke, dass du Bescheid gibst. Wir denken an dich.";
+      }
+    } catch (err) {
+      fail("Das hat leider nicht geklappt. Prüf deine Verbindung und versuch es nochmal.");
+      btn.disabled = false;
+      btn.textContent = "Absenden";
+    }
+  });
+</script>
+</body>
+</html>
